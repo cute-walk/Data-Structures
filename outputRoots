@@ -1,1 +1,32 @@
 
+#include<iostream>
+#include<math.h>
+using namespace std;
+
+void outputRoots(const double& a, const double& b, const double& c)
+{
+	double d = b * b - 4 * a * c ;
+	if (d > 0 )
+	{
+		//两个实数跟
+		double sqrtd = sqrt(d);
+		cout << " there are two real toots " << (-b + sqrtd) / (2 * a) << " and " << (-b - sqrtd) / (2 * a) << endl;
+	}
+	else if ( d == 0)
+		//两个相同根
+		cout << " there is only one distinct root " << -b / ( 2 * a ) << endl;
+	else
+	{
+		//复数共轭根
+		cout << " the roots are complex " << endl << "the teal part is " << -b / (2 * a) <<endl;
+		cout << " the imaginary part is " << sqrt(-d) / ( 2 * a) << endl;
+	}
+}
+
+int main()
+{
+	outputRoots(1, -5, 6);
+
+	return 0;
+}
+
